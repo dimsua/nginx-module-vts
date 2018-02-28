@@ -42,6 +42,9 @@ typedef struct {
     ngx_atomic_t                                     stat_2xx_counter;
     ngx_atomic_t                                     stat_3xx_counter;
     ngx_atomic_t                                     stat_4xx_counter;
+    ngx_atomic_t                                     stat_502_counter;
+    ngx_atomic_t                                     stat_503_counter;
+    ngx_atomic_t                                     stat_504_counter;
     ngx_atomic_t                                     stat_5xx_counter;
 
     ngx_msec_t                                       stat_request_time;
@@ -55,6 +58,9 @@ typedef struct {
     ngx_atomic_t                                     stat_2xx_counter_oc;
     ngx_atomic_t                                     stat_3xx_counter_oc;
     ngx_atomic_t                                     stat_4xx_counter_oc;
+    ngx_atomic_t                                     stat_502_counter_oc;
+    ngx_atomic_t                                     stat_503_counter_oc;
+    ngx_atomic_t                                     stat_504_counter_oc;
     ngx_atomic_t                                     stat_5xx_counter_oc;
 
 #if (NGX_HTTP_CACHE)

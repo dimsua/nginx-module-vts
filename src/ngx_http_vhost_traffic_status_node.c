@@ -175,6 +175,9 @@ ngx_http_vhost_traffic_status_node_zero(ngx_http_vhost_traffic_status_node_t *vt
     vtsn->stat_2xx_counter = 0;
     vtsn->stat_3xx_counter = 0;
     vtsn->stat_4xx_counter = 0;
+    vtsn->stat_502_counter = 0;
+    vtsn->stat_503_counter = 0;
+    vtsn->stat_504_counter = 0;
     vtsn->stat_5xx_counter = 0;
 
     vtsn->stat_request_time = 0;
@@ -186,6 +189,9 @@ ngx_http_vhost_traffic_status_node_zero(ngx_http_vhost_traffic_status_node_t *vt
     vtsn->stat_2xx_counter_oc = 0;
     vtsn->stat_3xx_counter_oc = 0;
     vtsn->stat_4xx_counter_oc = 0;
+    vtsn->stat_502_counter_oc = 0;
+    vtsn->stat_503_counter_oc = 0;
+    vtsn->stat_504_counter_oc = 0;
     vtsn->stat_5xx_counter_oc = 0;
 
 #if (NGX_HTTP_CACHE)
@@ -488,6 +494,18 @@ ngx_http_vhost_traffic_status_node_member(ngx_http_vhost_traffic_status_node_t *
     else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "4xx") == 0)
     {
         return vtsn->stat_4xx_counter;
+    }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "502") == 0)
+    {
+        return vtsn->stat_502_counter;
+    }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "503") == 0)
+    {
+        return vtsn->stat_503_counter;
+    }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "504") == 0)
+    {
+        return vtsn->stat_504_counter;
     }
     else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "5xx") == 0)
     {

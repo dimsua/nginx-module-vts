@@ -45,6 +45,21 @@ static ngx_http_variable_t  ngx_http_vhost_traffic_status_vars[] = {
       offsetof(ngx_http_vhost_traffic_status_node_t, stat_4xx_counter),
       NGX_HTTP_VAR_NOCACHEABLE, 0 },
 
+    { ngx_string("vts_502_counter"), NULL,
+      ngx_http_vhost_traffic_status_node_variable,
+      offsetof(ngx_http_vhost_traffic_status_node_t, stat_502_counter),
+      NGX_HTTP_VAR_NOCACHEABLE, 0 },
+
+    { ngx_string("vts_503_counter"), NULL,
+      ngx_http_vhost_traffic_status_node_variable,
+      offsetof(ngx_http_vhost_traffic_status_node_t, stat_503_counter),
+      NGX_HTTP_VAR_NOCACHEABLE, 0 },
+
+    { ngx_string("vts_504_counter"), NULL,
+      ngx_http_vhost_traffic_status_node_variable,
+      offsetof(ngx_http_vhost_traffic_status_node_t, stat_504_counter),
+      NGX_HTTP_VAR_NOCACHEABLE, 0 },
+
     { ngx_string("vts_5xx_counter"), NULL,
       ngx_http_vhost_traffic_status_node_variable,
       offsetof(ngx_http_vhost_traffic_status_node_t, stat_5xx_counter),

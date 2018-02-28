@@ -121,6 +121,18 @@ ngx_http_vhost_traffic_status_set_by_filter_node_member(
     {
         return vtsn->stat_4xx_counter;
     }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "502") == 0)
+    {
+        return vtsn->stat_502_counter;
+    }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "503") == 0)
+    {
+        return vtsn->stat_503_counter;
+    }
+    else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "504") == 0)
+    {
+        return vtsn->stat_504_counter;
+    }
     else if (ngx_http_vhost_traffic_status_node_member_cmp(member, "5xx") == 0)
     {
         return vtsn->stat_5xx_counter;

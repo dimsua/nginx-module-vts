@@ -85,6 +85,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA,"                                                             \
     "\"miss\":%uA,"                                                            \
     "\"bypass\":%uA,"                                                          \
@@ -109,6 +112,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA,"                                                             \
     "\"miss\":%uA,"                                                            \
     "\"bypass\":%uA,"                                                          \
@@ -130,6 +136,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA"                                                              \
     "},"                                                                       \
     "\"requestMsec\":%M,"                                                      \
@@ -146,6 +155,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA"                                                              \
     "}"                                                                        \
     "},"
@@ -163,6 +175,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA"                                                              \
     "},"                                                                       \
     "\"requestMsec\":%M,"                                                      \
@@ -189,6 +204,9 @@
     "\"2xx\":%uA,"                                                             \
     "\"3xx\":%uA,"                                                             \
     "\"4xx\":%uA,"                                                             \
+    "\"502\":%uA,"                                                             \
+    "\"503\":%uA,"                                                             \
+    "\"504\":%uA,"                                                             \
     "\"5xx\":%uA"                                                              \
     "}"                                                                        \
     "},"
@@ -231,6 +249,9 @@
     else if(s < 300) {n->stat_2xx_counter++;}                                  \
     else if(s < 400) {n->stat_3xx_counter++;}                                  \
     else if(s < 500) {n->stat_4xx_counter++;}                                  \
+    else if(s == 502) {n->stat_502_counter++;}                                  \
+    else if(s == 503) {n->stat_503_counter++;}                                  \
+    else if(s == 504) {n->stat_504_counter++;}                                  \
     else {n->stat_5xx_counter++;}                                              \
 }
 
@@ -300,6 +321,15 @@
     if (o->stat_4xx_counter > c->stat_4xx_counter) {                           \
         c->stat_4xx_counter_oc++;                                              \
     }                                                                          \
+    if (o->stat_502_counter > c->stat_502_counter) {                           \
+        c->stat_502_counter_oc++;                                              \
+    }                                                                          \
+    if (o->stat_503_counter > c->stat_503_counter) {                           \
+        c->stat_503_counter_oc++;                                              \
+    }                                                                          \
+    if (o->stat_504_counter > c->stat_504_counter) {                           \
+        c->stat_504_counter_oc++;                                              \
+    }                                                                          \
     if (o->stat_5xx_counter > c->stat_5xx_counter) {                           \
         c->stat_5xx_counter_oc++;                                              \
     }                                                                          \
@@ -351,6 +381,15 @@
     }                                                                          \
     if (o->stat_4xx_counter > c->stat_4xx_counter) {                           \
         c->stat_4xx_counter_oc++;                                              \
+    }                                                                          \
+    if (o->stat_502_counter > c->stat_502_counter) {                           \
+        c->stat_502_counter_oc++;                                              \
+    }                                                                          \
+    if (o->stat_503_counter > c->stat_503_counter) {                           \
+        c->stat_503_counter_oc++;                                              \
+    }                                                                          \
+    if (o->stat_504_counter > c->stat_504_counter) {                           \
+        c->stat_504_counter_oc++;                                              \
     }                                                                          \
     if (o->stat_5xx_counter > c->stat_5xx_counter) {                           \
         c->stat_5xx_counter_oc++;                                              \
